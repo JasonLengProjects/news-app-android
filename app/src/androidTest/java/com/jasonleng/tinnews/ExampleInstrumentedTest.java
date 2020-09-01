@@ -1,4 +1,4 @@
-package com.laioffer.tinnews;
+package com.jasonleng.tinnews;
 
 import android.content.Context;
 
