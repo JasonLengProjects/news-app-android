@@ -1,7 +1,12 @@
 package com.jasonleng.tinnews.model;
 
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.util.Objects;
 
+@Entity
 public class Article {
     public String author;
     public String content;
@@ -29,7 +34,10 @@ public class Article {
         return Objects.hash(author, content, description, publishedAt, title, url, urlToImage, favorite);
     }
 
+    @NonNull
+    @PrimaryKey
     public String url;
+
     public String urlToImage;
     public boolean favorite;
 

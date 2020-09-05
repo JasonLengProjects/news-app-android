@@ -12,7 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.jasonleng.tinnews.R;
 import com.jasonleng.tinnews.databinding.FragmentHomeBinding;
 import com.jasonleng.tinnews.model.Article;
 import com.jasonleng.tinnews.repository.NewsRepository;
@@ -44,6 +43,9 @@ public class HomeFragment extends Fragment implements CardStackListener {
             Log.d("CardStackView", "Unliked " + layoutManager.getTopPosition());
         } else if (direction == Direction.Right) {
             Log.d("CardStackView", "Liked " + layoutManager.getTopPosition());
+
+            Article article = articles.get(layoutManager.getTopPosition() - 1);
+            viewModel.setFavoriteArticleInput(article);
         }
     }
 

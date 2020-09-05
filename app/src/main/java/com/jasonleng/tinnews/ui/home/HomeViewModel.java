@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Transformations;
 import androidx.lifecycle.ViewModel;
 
+import com.jasonleng.tinnews.model.Article;
 import com.jasonleng.tinnews.model.NewsResponse;
 import com.jasonleng.tinnews.repository.NewsRepository;
 
@@ -19,6 +20,10 @@ public class HomeViewModel extends ViewModel {
 
     public void setCountryInput(String country) {
         countryInput.setValue(country);
+    }
+
+    public void setFavoriteArticleInput(Article article) {
+        repository.favoriteArticle(article);
     }
 
     public LiveData<NewsResponse> getTopHeadlines() {
